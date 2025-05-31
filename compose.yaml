@@ -1,0 +1,16 @@
+services:
+  dev:
+    image: server-side-swift-nvim:latest
+    working_dir: /swiftlover/workspace
+    build:
+      context: .
+    tty: true
+    environment:
+      GIT_USER_NAME: "lemo-nade-room"
+      GIT_USER_EMAIL: "lemo.nade.engineer.room@gmail.com"
+    volumes:
+      - './nvim:/swiftlover/.config/nvim'
+      - 'server_side_swift_nvim_docker_workspace:/swiftlover/workspace'
+
+volumes:
+  server_side_swift_nvim_docker_workspace:
